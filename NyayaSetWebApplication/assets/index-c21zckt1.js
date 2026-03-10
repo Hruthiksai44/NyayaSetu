@@ -8602,8 +8602,310 @@ Error generating stack: `+n.message+`
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */class cy1{constructor(s){this.apiKey=s}getGenerativeModel(s,u){if(!s.model)throw new O1("Must provide a model name. Example: genai.getGenerativeModel({ model: 'my-model-name' })");return new F$(this.apiKey,s,u)}getGenerativeModelFromCachedContent(s,u,r){if(!s.name)throw new jt("Cached content must contain a `name` field.");if(!s.model)throw new jt("Cached content must contain a `model` field.");const m=["model","systemInstruction"];for(const I of m)if(u!=null&&u[I]&&s[I]&&(u==null?void 0:u[I])!==s[I]){if(I==="model"){const H=u.model.startsWith("models/")?u.model.replace("models/",""):u.model,A=s.model.startsWith("models/")?s.model.replace("models/",""):s.model;if(H===A)continue}throw new jt(`Different value for "${I}" specified in modelParams (${u[I]}) and cachedContent (${s[I]})`)}const b=Object.assign(Object.assign({},u),{model:s.model,tools:s.tools,toolConfig:s.toolConfig,systemInstruction:s.systemInstruction,cachedContent:s});return new F$(this.apiKey,b,r)}}const G$=[{id:"bns",title:"Bharatiya Nyaya Sanhita (BNS)",description:"The principal criminal code of India (replaces IPC). Covers murder, theft, rape, and general offences.",icon:"BookOpen"},{id:"pocso",title:"POCSO Act 2012",description:"Protection of Children from Sexual Offences Act. Strict laws against sexual abuse of minors.",icon:"HeartHandshake"},{id:"scst",title:"SC/ST Prevention of Atrocities",description:"Special laws to prevent discrimination and violence against Scheduled Castes and Tribes.",icon:"ShieldAlert"},{id:"jj",title:"Juvenile Justice Act",description:"Laws regarding children in conflict with law and those in need of care and protection.",icon:"Users"},{id:"it",title:"Cyber Laws (IT Act)",description:"Offences related to computers, internet, data theft, and cyber terrorism.",icon:"Wifi"}],ny1=[{name:"India Code",url:"https://www.indiacode.gov.in",type:"Legislation"},{name:"e-Gazette",url:"https://egazette.gov.in",type:"Legislation"},{name:"Ministry of Law & Justice",url:"https://lawmin.gov.in",type:"Government"},{name:"Legislative Dept",url:"https://legislative.gov.in",type:"Government"},{name:"Supreme Court of India",url:"https://sci.gov.in",type:"Judiciary"},{name:"Indian Kanoon",url:"https://indiankanoon.org",type:"Judiciary"},{name:"Ministry of WCD",url:"https://wcd.nic.in",type:"Protective"},{name:"NALSA",url:"https://nalsa.gov.in",type:"Legal Aid"},{name:"NCW",url:"https://ncw.nic.in",type:"Protective"},{name:"NCSC",url:"https://ncsc.nic.in",type:"Protective"},{name:"NCST",url:"https://ncst.gov.in",type:"Protective"}],oy1=[{id:"bns-103-1",act:"BNS 2023",section:"Section 103(1)",title:"Murder",description:"Who causes death by doing an act with the intention of causing death.",punishment:"Death or Imprisonment for Life, and fine.",category:"bns",tags:["body","severe","homicide"],landmarkCases:[{title:"Bachan Singh v. State of Punjab",summary:'Established the "rarest of rare" doctrine for death penalty.'}]},{id:"bns-103-2",act:"BNS 2023",section:"Section 103(2)",title:"Mob Lynching",description:"When a group of 5 or more persons acting in concert commits murder on the ground of race, caste or community.",punishment:"Death or Imprisonment for Life.",category:"bns",tags:["body","hate-crime","mob"],landmarkCases:[{title:"Tehseen Poonawalla v. UOI",summary:"Guidelines against mob vigilantism."}]},{id:"bns-64",act:"BNS 2023",section:"Section 64",title:"Rape",description:"Sexual intercourse by a man with a woman without her consent.",punishment:"Rigorous Imprisonment not less than 10 years, may extend to life.",category:"bns",tags:["women","sexual-offence","severe"],landmarkCases:[{title:"State of Punjab v. Gurmit Singh",summary:"Testimony of prosecutrix needs no corroboration if reliable."}]},{id:"bns-69",act:"BNS 2023",section:"Section 69",title:"Sexual Intercourse by Deceit",description:"Sexual intercourse by employing deceitful means (e.g., false promise of marriage).",punishment:"Imprisonment up to 10 years and fine.",category:"bns",tags:["women","deceit"],landmarkCases:[]},{id:"bns-303",act:"BNS 2023",section:"Section 303(2)",title:"Theft",description:"Moving movable property out of possession of any person without consent.",punishment:"Imprisonment up to 3 years or fine or community service.",category:"bns",tags:["property","theft"],landmarkCases:[]},{id:"bns-304",act:"BNS 2023",section:"Section 304",title:"Snatching",description:"Suddenly or quickly seizing or securing any movable property.",punishment:"Imprisonment up to 3 years.",category:"bns",tags:["property","public-order"],landmarkCases:[]},{id:"pocso-3",act:"POCSO Act 2012",section:"Section 3",title:"Penetrative Sexual Assault",description:"Penetrative sexual assault on a child.",punishment:"Imprisonment not less than 10 years, up to life.",category:"pocso",tags:["child","sexual-offence","severe"],landmarkCases:[{title:"Eera v. State (NCT of Delhi)",summary:"Defined strict liability in POCSO cases."}]},{id:"pocso-5",act:"POCSO Act 2012",section:"Section 5",title:"Aggravated Penetrative Sexual Assault",description:"Assault by police, armed forces, public servant, or relative/authority figure.",punishment:"Imprisonment not less than 20 years, up to death (if child <12).",category:"pocso",tags:["child","sexual-offence","severe"],landmarkCases:[]},{id:"pocso-11",act:"POCSO Act 2012",section:"Section 11",title:"Sexual Harassment of Child",description:"Uttering words, making sounds, or exhibiting object/body to child with sexual intent.",punishment:"Imprisonment up to 3 years.",category:"pocso",tags:["child","harassment"],landmarkCases:[]},{id:"scst-3-1-r",act:"SC/ST Act",section:"Section 3(1)(r)",title:"Intentional Insult",description:"Intentionally insults or intimidates with intent to humiliate a member of SC/ST in public view.",punishment:"Imprisonment 6 months to 5 years.",category:"scst",tags:["caste","discrimination"],landmarkCases:[{title:"Swaran Singh v. State",summary:'Defined "Public View" essential for the offence.'}]},{id:"scst-3-1-w",act:"SC/ST Act",section:"Section 3(1)(w)",title:"Sexual Exploitation of SC/ST Woman",description:"Intentionally touching a woman belonging to SC/ST without her consent.",punishment:"Imprisonment 6 months to 5 years.",category:"scst",tags:["caste","women","sexual-offence"],landmarkCases:[]},{id:"jj-75",act:"JJ Act 2015",section:"Section 75",title:"Cruelty to Child",description:"Assaults, abandons, exposes or willfully neglects a child causing suffering.",punishment:"Imprisonment up to 3 years.",category:"jj",tags:["child","abuse"],landmarkCases:[]},{id:"jj-77",act:"JJ Act 2015",section:"Section 77",title:"Giving Intoxicating Substance",description:"Giving intoxicating liquor or narcotic drug to a child.",punishment:"Imprisonment up to 7 years.",category:"jj",tags:["child","drugs"],landmarkCases:[]},{id:"it-66d",act:"IT Act 2000",section:"Section 66D",title:"Cheating by Personation",description:"Cheating by using computer resource or communication device.",punishment:"Imprisonment up to 3 years.",category:"it",tags:["cyber","fraud"],landmarkCases:[]},{id:"it-67",act:"IT Act 2000",section:"Section 67",title:"Publishing Obscene Information",description:"Publishing or transmitting obscene material in electronic form.",punishment:"Imprisonment up to 3 years (first conviction).",category:"it",tags:["cyber","obscenity"],landmarkCases:[{title:"Shreya Singhal v. Union of India",summary:"Struck down Sec 66A but upheld 67 regarding obscenity standards."}]}],iy1=["AIzaSyAfm8ajXUk9-DtM3xu4O9w5VmBcIRaKN64","AIzaSyCNq8NtahR00MqAGybvaxExHmO-LLAd4U0","AIzaSyAmQNqBKOAjTIRYF9j3a3z11HWwGAeAi9A","AIzaSyCvJUGQR2nOjVX4UQ1a-R2xnrr6L9RaLo4","AIzaSyD5dkpmBTdDHx4p1Z9n3IOSh-USvnz0jwU","AIzaSyDoK5URtTghqfTseziRdAinGV4J89B2eYw"],dy1=ny1.map(l=>`- ${l.name}: ${l.url}`).join(`
-`),sz=new Map,ly1=l=>new Promise(s=>setTimeout(s,l)),P$=()=>{const l=localStorage.getItem("user_gemini_key");if(l)return console.log("USING USER'S CUSTOM KEY 👤"),{key:l,isCustom:!0};const s=iy1.filter(r=>!!r&&r.includes("AIza"));if(s.length===0)throw new Error("No API Keys configured. Please check src/apiKeys.ts");const u=s[Math.floor(Math.random()*s.length)];return console.log(`USING POOL KEY 🎱 (...${u.slice(-4)})`),{key:u,isCustom:!1}},hy1=async l=>{const s=`${l.name}-${l.age}-${l.gender}-${l.caste}`;if(sz.has(s))return sz.get(s);const u=`
+ */class cy1 {
+  constructor(s) {
+    this.apiKey = s;
+  }
+  
+  getGenerativeModel(s, u) {
+    if (!s.model) throw new O1("Must provide a model name. Example: genai.getGenerativeModel({ model: 'my-model-name' })");
+    return new F$(this.apiKey, s, u);
+  }
+  
+  getGenerativeModelFromCachedContent(s, u, r) {
+    if (!s.name) throw new jt("Cached content must contain a `name` field.");
+    if (!s.model) throw new jt("Cached content must contain a `model` field.");
+    
+    const m = ["model", "systemInstruction"];
+    
+    for (const I of m) {
+      if (u != null && u[I] && s[I] && (u == null ? void 0 : u[I]) !== s[I]) {
+        if (I === "model") {
+          const H = u.model.startsWith("models/") ? u.model.replace("models/", "") : u.model;
+          const A = s.model.startsWith("models/") ? s.model.replace("models/", "") : s.model;
+          if (H === A) continue;
+        }
+        throw new jt(`Different value for "${I}" specified in modelParams (${u[I]}) and cachedContent (${s[I]})`);
+      }
+    }
+    
+    const b = Object.assign(Object.assign({}, u), {
+      model: s.model,
+      tools: s.tools,
+      toolConfig: s.toolConfig,
+      systemInstruction: s.systemInstruction,
+      cachedContent: s
+    });
+    
+    return new F$(this.apiKey, b, r);
+  }
+}
+
+const G$ = [
+  {
+    id: "bns",
+    title: "Bharatiya Nyaya Sanhita (BNS)",
+    description: "The principal criminal code of India (replaces IPC). Covers murder, theft, rape, and general offences.",
+    icon: "BookOpen"
+  },
+  {
+    id: "pocso",
+    title: "POCSO Act 2012",
+    description: "Protection of Children from Sexual Offences Act. Strict laws against sexual abuse of minors.",
+    icon: "HeartHandshake"
+  },
+  {
+    id: "scst",
+    title: "SC/ST Prevention of Atrocities",
+    description: "Special laws to prevent discrimination and violence against Scheduled Castes and Tribes.",
+    icon: "ShieldAlert"
+  },
+  {
+    id: "jj",
+    title: "Juvenile Justice Act",
+    description: "Laws regarding children in conflict with law and those in need of care and protection.",
+    icon: "Users"
+  },
+  {
+    id: "it",
+    title: "Cyber Laws (IT Act)",
+    description: "Offences related to computers, internet, data theft, and cyber terrorism.",
+    icon: "Wifi"
+  }
+];
+
+const ny1 = [
+  { name: "India Code", url: "https://www.indiacode.gov.in", type: "Legislation" },
+  { name: "e-Gazette", url: "https://egazette.gov.in", type: "Legislation" },
+  { name: "Ministry of Law & Justice", url: "https://lawmin.gov.in", type: "Government" },
+  { name: "Legislative Dept", url: "https://legislative.gov.in", type: "Government" },
+  { name: "Supreme Court of India", url: "https://sci.gov.in", type: "Judiciary" },
+  { name: "Indian Kanoon", url: "https://indiankanoon.org", type: "Judiciary" },
+  { name: "Ministry of WCD", url: "https://wcd.nic.in", type: "Protective" },
+  { name: "NALSA", url: "https://nalsa.gov.in", type: "Legal Aid" },
+  { name: "NCW", url: "https://ncw.nic.in", type: "Protective" },
+  { name: "NCSC", url: "https://ncsc.nic.in", type: "Protective" },
+  { name: "NCST", url: "https://ncst.gov.in", type: "Protective" }
+];
+
+const oy1 = [
+  {
+    id: "bns-103-1",
+    act: "BNS 2023",
+    section: "Section 103(1)",
+    title: "Murder",
+    description: "Who causes death by doing an act with the intention of causing death.",
+    punishment: "Death or Imprisonment for Life, and fine.",
+    category: "bns",
+    tags: ["body", "severe", "homicide"],
+    landmarkCases: [
+      { title: "Bachan Singh v. State of Punjab", summary: 'Established the "rarest of rare" doctrine for death penalty.' }
+    ]
+  },
+  {
+    id: "bns-103-2",
+    act: "BNS 2023",
+    section: "Section 103(2)",
+    title: "Mob Lynching",
+    description: "When a group of 5 or more persons acting in concert commits murder on the ground of race, caste or community.",
+    punishment: "Death or Imprisonment for Life.",
+    category: "bns",
+    tags: ["body", "hate-crime", "mob"],
+    landmarkCases: [
+      { title: "Tehseen Poonawalla v. UOI", summary: "Guidelines against mob vigilantism." }
+    ]
+  },
+  {
+    id: "bns-64",
+    act: "BNS 2023",
+    section: "Section 64",
+    title: "Rape",
+    description: "Sexual intercourse by a man with a woman without her consent.",
+    punishment: "Rigorous Imprisonment not less than 10 years, may extend to life.",
+    category: "bns",
+    tags: ["women", "sexual-offence", "severe"],
+    landmarkCases: [
+      { title: "State of Punjab v. Gurmit Singh", summary: "Testimony of prosecutrix needs no corroboration if reliable." }
+    ]
+  },
+  {
+    id: "bns-69",
+    act: "BNS 2023",
+    section: "Section 69",
+    title: "Sexual Intercourse by Deceit",
+    description: "Sexual intercourse by employing deceitful means (e.g., false promise of marriage).",
+    punishment: "Imprisonment up to 10 years and fine.",
+    category: "bns",
+    tags: ["women", "deceit"],
+    landmarkCases: []
+  },
+  {
+    id: "bns-303",
+    act: "BNS 2023",
+    section: "Section 303(2)",
+    title: "Theft",
+    description: "Moving movable property out of possession of any person without consent.",
+    punishment: "Imprisonment up to 3 years or fine or community service.",
+    category: "bns",
+    tags: ["property", "theft"],
+    landmarkCases: []
+  },
+  {
+    id: "bns-304",
+    act: "BNS 2023",
+    section: "Section 304",
+    title: "Snatching",
+    description: "Suddenly or quickly seizing or securing any movable property.",
+    punishment: "Imprisonment up to 3 years.",
+    category: "bns",
+    tags: ["property", "public-order"],
+    landmarkCases: []
+  },
+  {
+    id: "pocso-3",
+    act: "POCSO Act 2012",
+    section: "Section 3",
+    title: "Penetrative Sexual Assault",
+    description: "Penetrative sexual assault on a child.",
+    punishment: "Imprisonment not less than 10 years, up to life.",
+    category: "pocso",
+    tags: ["child", "sexual-offence", "severe"],
+    landmarkCases: [
+      { title: "Eera v. State (NCT of Delhi)", summary: "Defined strict liability in POCSO cases." }
+    ]
+  },
+  {
+    id: "pocso-5",
+    act: "POCSO Act 2012",
+    section: "Section 5",
+    title: "Aggravated Penetrative Sexual Assault",
+    description: "Assault by police, armed forces, public servant, or relative/authority figure.",
+    punishment: "Imprisonment not less than 20 years, up to death (if child <12).",
+    category: "pocso",
+    tags: ["child", "sexual-offence", "severe"],
+    landmarkCases: []
+  },
+  {
+    id: "pocso-11",
+    act: "POCSO Act 2012",
+    section: "Section 11",
+    title: "Sexual Harassment of Child",
+    description: "Uttering words, making sounds, or exhibiting object/body to child with sexual intent.",
+    punishment: "Imprisonment up to 3 years.",
+    category: "pocso",
+    tags: ["child", "harassment"],
+    landmarkCases: []
+  },
+  {
+    id: "scst-3-1-r",
+    act: "SC/ST Act",
+    section: "Section 3(1)(r)",
+    title: "Intentional Insult",
+    description: "Intentionally insults or intimidates with intent to humiliate a member of SC/ST in public view.",
+    punishment: "Imprisonment 6 months to 5 years.",
+    category: "scst",
+    tags: ["caste", "discrimination"],
+    landmarkCases: [
+      { title: "Swaran Singh v. State", summary: 'Defined "Public View" essential for the offence.' }
+    ]
+  },
+  {
+    id: "scst-3-1-w",
+    act: "SC/ST Act",
+    section: "Section 3(1)(w)",
+    title: "Sexual Exploitation of SC/ST Woman",
+    description: "Intentionally touching a woman belonging to SC/ST without her consent.",
+    punishment: "Imprisonment 6 months to 5 years.",
+    category: "scst",
+    tags: ["caste", "women", "sexual-offence"],
+    landmarkCases: []
+  },
+  {
+    id: "jj-75",
+    act: "JJ Act 2015",
+    section: "Section 75",
+    title: "Cruelty to Child",
+    description: "Assaults, abandons, exposes or willfully neglects a child causing suffering.",
+    punishment: "Imprisonment up to 3 years.",
+    category: "jj",
+    tags: ["child", "abuse"],
+    landmarkCases: []
+  },
+  {
+    id: "jj-77",
+    act: "JJ Act 2015",
+    section: "Section 77",
+    title: "Giving Intoxicating Substance",
+    description: "Giving intoxicating liquor or narcotic drug to a child.",
+    punishment: "Imprisonment up to 7 years.",
+    category: "jj",
+    tags: ["child", "drugs"],
+    landmarkCases: []
+  },
+  {
+    id: "it-66d",
+    act: "IT Act 2000",
+    section: "Section 66D",
+    title: "Cheating by Personation",
+    description: "Cheating by using computer resource or communication device.",
+    punishment: "Imprisonment up to 3 years.",
+    category: "it",
+    tags: ["cyber", "fraud"],
+    landmarkCases: []
+  },
+  {
+    id: "it-67",
+    act: "IT Act 2000",
+    section: "Section 67",
+    title: "Publishing Obscene Information",
+    description: "Publishing or transmitting obscene material in electronic form.",
+    punishment: "Imprisonment up to 3 years (first conviction).",
+    category: "it",
+    tags: ["cyber", "obscenity"],
+    landmarkCases: [
+      { title: "Shreya Singhal v. Union of India", summary: "Struck down Sec 66A but upheld 67 regarding obscenity standards." }
+    ]
+  }
+];
+
+// API Keys removed and replaced with placeholder
+const iy1 = [
+  "YOUR_GEMINI_API_KEY_1",
+  "YOUR_GEMINI_API_KEY_2",
+  "YOUR_GEMINI_API_KEY_3",
+  "YOUR_GEMINI_API_KEY_4",
+  "YOUR_GEMINI_API_KEY_5",
+  "YOUR_GEMINI_API_KEY_6"
+];
+
+const dy1 = ny1.map(l => `- ${l.name}: ${l.url}`).join(`
+`);
+
+const sz = new Map;
+
+const ly1 = l => new Promise(s => setTimeout(s, l));
+
+const P$ = () => {
+  const l = localStorage.getItem("user_gemini_key");
+  if (l) {
+    console.log("USING USER'S CUSTOM KEY 👤");
+    return { key: l, isCustom: true };
+  }
+  
+  const s = iy1.filter(r => !!r && r.includes("AIza"));
+  if (s.length === 0) throw new Error("No API Keys configured. Please add your API keys to the iy1 array");
+  
+  const u = s[Math.floor(Math.random() * s.length)];
+  console.log(`USING POOL KEY 🎱 (...${u.slice(-4)})`);
+  
+  return { key: u, isCustom: false };
+};
+
+const hy1 = async l => {
+  const s = `${l.name}-${l.age}-${l.gender}-${l.caste}`;
+  if (sz.has(s)) return sz.get(s);
+  
+  const u = `
     You are an expert Indian Legal Advisor.
     User Profile: Name: ${l.name}, Age: ${l.age}, Gender: ${l.gender}, Caste: ${l.caste}
     Sources: ${dy1}
